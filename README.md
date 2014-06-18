@@ -1,5 +1,4 @@
-Boolos and Jeffrey's _Computability and Logic_
-==============================================
+## Boolos and Jeffrey's _Computability and Logic_ ##
 
 This repo contains LaTeX source and finished PDFs of
 my coursework for a Directed Studies class on computability
