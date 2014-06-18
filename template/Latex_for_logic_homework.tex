@@ -1,0 +1,191 @@
+\documentclass[a4paper,11pt]{article}
+
+\author{Wouter Beek, $\href{mailto:me@wouterbeek.com}%
+{me@wouterbeek.com}$}
+\title{Latex for logic homework}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bussproofs}
+\usepackage{cite}
+\usepackage[pdftex]{hyperref}
+\usepackage{latexsym}
+\usepackage{listings}
+\usepackage{synttree}
+\usepackage{textcomp}
+\usepackage{verbatim}
+
+\begin{document}
+
+\maketitle
+
+\section{Installation}
+
+Latex is installed and ready for use within minutes.
+
+\subsection{Linux, Unix, BSD}
+
+Most likely Latex has already been installed, and you only need to add the latex-commands to your classpath, e.g. \verb|pdflatex|. Otherwise, install latex via your package manager of choice, e.g. \verb|yum install latex| or \verb|apt-get install latex|.
+
+\subsection{Mac OS}
+
+Download and install \href{http://tug.org/mactex/}{\textbf{Texlive}}. When installed, you should be able to use the latex-commands right from the terminal. Comes with most of the packages you will want to use.
+
+\subsection{Windows}
+
+Download and install \href{http://miktex.org/}{\textbf{Miktex}}. When installed, you should be able to use the latex-commands right from the windows terminal. If you load a package that does not come with the standard program installation, Miktex will automatically download an install it.
+
+\subsection{}
+
+\section{A Latex document}
+
+A standard Latex document looks like this:
+
+\begin{lstlisting}
+	\documentclass{article}
+	
+	\begin{document}
+	Hello world!
+	\end{document}
+\end{lstlisting}
+
+The area between \verb|\documentclass{article}| and \verb|\begin{document}| is the hearder. This is where we specify document-wide settings. The area between \verb|\begin{document}| and \verb|\end{document}| is the content area.
+
+The file name should end with the \verb|.tex|-extention (e.g. \verb|hello.tex|). In the terminal you can turn it into a pdf-file with the command \verb|pdflatex hello.tex|. If there are no errors, the pdf-file will be placed in the same directory as the tex-file.
+
+\section{Some things about the header}
+
+\subsection{Additional settings}
+
+The command \verb|\documentclass| can be altered in order to reflect different document properties. We chose to use \verb|article|, other available options are \verb|book|, \verb|report|, and \verb|letter|.
+
+\verb|\documentclass[a4paper,11pt]{article}| also specifies the paper type and the standard font size.
+
+\subsection{Title, subtitle, author, date}
+
+\begin{lstlisting}
+\title{Logic homework}
+\subtitle{Week 4}
+\author{Theo Janssen}
+\end{lstlisting}
+
+\subsection{Loading packages} \label{section:packages}
+
+In section \ref{section:comments} we will use the package \verb|verbatim| for making multi-line comments. Since this functionality is not part of the standard equipment of Latex, we will have to load it explicitly. We do this by adding \verb|\usepackage{verbatim}| to the header.
+
+\section{Some things about the content}
+
+\subsection{Title}
+
+If you include the command \verb|\maketitle|, it will generate the title for your document based on the information you provided in the header (i.e. \verb|\author{}|, \verb|\title{}|, \verb|\subtitle{}|, \verb|\date{}|).
+
+\subsection{Structure}
+
+You can structure your document by dividing it into sections and subsections. Do do this with the commands \verb|\section{Section name}| and \verb|\subsection{Subsection name}|.
+
+\subsection{Rudimentary markup}
+
+\begin{tabular}{|l|l|l|}
+\hline
+Markup name & Latex notation & Document result \\
+\hline
+Bold text & \verb|\textbf{lalala}| & \textbf{lalala} \\
+Italics & \verb|\emph{lilili}| & \emph{lilili} \\
+Monospace & \verb|\texttt{lololo}| & \texttt{lololo} \\
+\hline
+\end{tabular}
+
+\subsection{Comments} \label{section:comments}
+
+There are line comments \verb|% Commented text...| and multi-line comments (for which you need to load the \verb|verbatim|-package, see section \ref{section:packages}):
+
+\begin{lstlisting}
+\begin{comment}
+Commented...
+...text
+\end{comment}
+\end{lstlisting}
+
+\subsection{Verbatim}
+
+Sometimes you want to display ASCI-signs literally, i.e. not interpreted by Latex. This can be done inline with \verb|\verb|. For multi-line verbatim you use \verb|\begin{verbatim}| and \verb|\end{verbatim}|. (This too requires the package \verb|verbatim|.)
+
+\subsection{Mathematical and logical symbols and equations}
+
+Inline symbols occur between dollar signs. For example the logical `and' is included inline with \verb|$\land$|.
+
+Besides inline mathematical symbolism, you can also make equations. Observe that in such cases you do not include the \verb|$|-signs. You can include text in an equation by enclosing it within \verb|\text{}|.
+
+\begin{lstlisting}
+\begin{equation}
+\forall x (P(x) \leftarrow (\exists y (Q(y)))) \text{some text}
+\end{equation}
+\end{lstlisting}
+
+The commands for the most common logical and set-theoretical notation are listed in the following table. Some of these symbols require the \verb|latexsym| package, so include \verb|\usepackage{latexsym}| in the header of your document as well.
+
+\begin{tabular}{|l|l|l|}
+\hline
+Symbol name & Latex notation & Document result \\
+\hline
+And & \verb|\land| & $\land$ \\
+Or & \verb|\lor| & $\lor$ \\
+Negation & \verb|lnot| & $\lnot$ \\
+Implication & \verb|\rightarrow| & $\rightarrow$ \\
+Bi-implication & \verb|\leftrightarrow| & $\leftrightarrow$ \\
+Entails & \verb|\vdash| & $\vdash$ \\
+Models & \verb|\vDash| & $\vDash$ \\
+Universal quantification & \verb|\forall| & $\forall$ \\
+Existential quantification & \verb|\exists| & $\exists$ \\
+Subscripts & \verb|a_{n + 1}| & $a_{n + 1}$ \\
+Superscripts & \verb|a^2| & $a^2$ \\
+Greek alphabet & \verb|\alpha| \verb|\gamma| \verb|\Gamma| & $\alpha$ $\gamma$ $\Gamma$ \\
+Verum & \verb|\top| & $\top$ \\
+Falsum & \verb|\bot| & $\bot$ \\
+Infinity & \verb|\infty| & $\infty$ \\
+Summations & \verb|\Sigma^{i=1}_\infty| & $\Sigma^{i=1}_\infty$ \\
+Smaller than or equal & \verb|\leq| & $\leq$ \\
+Larger than or equal & \verb|\geq| & $\geq$ \\
+Unequal & \verb|\neq| & $\neq$ \\
+\hline
+\end{tabular}
+
+\section{Appendices}
+
+\subsection{Common symbols for set theory}
+
+\begin{tabular}{|l|l|l|}
+\hline
+Symbol name & Latex notation & Document result \\
+\hline
+Set membership & \verb|\in| & $\in$ \\
+Not a member of & \verb|\notin| & $\notin$ \\
+Subset & \verb|\subset| \verb|\subseteq| & $\subset$ $\subseteq$ \\
+Superset & \verb|\supset| \verb|\supseteq| & $\supset$ $\supseteq$ \\
+\hline
+\end{tabular}
+
+\subsection{List}
+
+For a list with bullet points use the following:
+
+\begin{lstlisting}
+\begin{itemize}
+\item ...
+...
+\item ...
+\end{itemize}
+\end{lstlisting}
+
+If you want a numbered list instead, replace \verb|itemize| with \verb|enumerate|.
+
+\subsection{Further reading}
+
+\begin{itemize}
+\item \href{tobi.oetiker.ch/lshort/lshort.pdf}{The Not So Short Introduction to Latex} by Tobias Oetiker. If you want a more comprehensive introduction to Latex.
+\item \href{http://www-h.eng.cam.ac.uk/help/tpl/textprocessing/LaTeX_intro.html}{University of Cambridge, Engineering Depatment, Latex page} Advanced text processing in Latex. For resources regarding advanced Latex editing.
+\item \href{http://www.logicmatters.net/}{Latex for logicians}
+\end{itemize}
+
+\end{document}
