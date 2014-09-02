@@ -15,6 +15,7 @@
 \usepackage{synttree}
 \usepackage{textcomp}
 \usepackage{verbatim}
+\usepackage{tabu}
 
 \newtheorem{lem}{Lemma}[section]
 \newtheorem{thm}{Theorem}[section]
@@ -30,7 +31,7 @@
 
 \section{A question about $\cap$} 
 
-	\subsection*{Premise:}
+	\subsection*{Proposition:}
 	The intersection of a finite set \textbf{S} and an enumerable set \textbf{T} is enumerable.
 	
 	\bigskip
@@ -38,9 +39,9 @@
 	\begin{lem}Any finite set is enumerable.\end{lem}
 		\begin{proof}
 		Let \textbf{S} be a finite set with \textit{n} elements. Let \textbf{K} = \{1,2,\dots,\textit{n}\}. 
-		Choose an element \textbf{s} in \textbf{S} and assign $\mathnormal{f(n)} = \textbf{s}$. 
-		Set $\textbf{S}^\prime$ to \textbf{S} - \{\textbf{s}\}. Choose an element $\textbf{s}^\prime$ 
-		in $\textbf{S}^\prime$ and assign $\mathnormal{f(n-1)} = \textbf{s}^\prime$. 
+		Choose an element $\textbf{s} \in \textbf{S}$ and assign $\mathnormal{f(n)} = \textbf{s}$. 
+		Set $\textbf{S}^\prime$ to \textbf{S} - \{\textbf{s}\}. Choose an element $\textbf{s}^\prime
+		\in \textbf{S}^\prime$ and assign $\mathnormal{f(n-1)} = \textbf{s}^\prime$. 
 		Repeat this procedure until \textbf{S} is exhausted. The resulting function $f : \textbf{K} \rightarrow 	
 		\textbf{S}$ is an enumeration of \textbf{S}.
 		\end{proof}
@@ -67,13 +68,13 @@
 
 \section{A slightly harder question about $\cap$}
 
-	\subsection*{Premise:}
+	\subsection*{Proposition:}
 	The intersection of an enumerable set of enumerable sets is itself enumerable.
 
 	\bigskip
 	
 	\begin{proof}
-	Let \textbf{S} be a enumerable set of enumerable sets. Pick a set \textbf{A} from \textbf{S}. Let
+	Let \textbf{S} be a enumerable set of enumerable sets. Pick a set $\textbf{A} \in \textbf{S}$. Let
 	\textbf{B} be $\bigcap (\textbf{S} - \textbf{A})$. By \textbf{Theorem 1.1} we can define a function 
 	$\mathnormal{h}: \mathbb{N} \rightarrow \textbf{A} \cap \textbf{B}$ that enumerates $\bigcap \textbf{S}$.	
 	\end{proof}
@@ -82,26 +83,59 @@
 
 \section{It takes two...}
 
-	\subsection*{Premise:}
+	\subsection*{Proposition:}
 	Let \textbf{F} be a set of \textit{one to one} functions that both i) have a domain that's a subset of the positive
 	integers, and ii) are \textit{onto} a two element set \{a,b\}. \textbf{F} is enumerable.
 
 	\subsection*{Conclusion:}
 	(work in progress)
+	
+\pagebreak
 
 % QUESTION 4
 
 \section{Enumerate all the things!}
 
-	\subsection*{Premise:}
+	\subsection*{Proposition:}
 	The set of all finite sequences of positive integers is enumerable.
 	
 	\bigskip
 	
-	\begin{thm}foo\end{thm}
+	\begin{lem} The Cartesian product of two finite sets is enumerable. \end{lem}
+	\begin{proof}
+	Let \textbf{A} and \textbf{B} be two sets with a finite number $\mathnormal{n}$ many members.
+	The Cartesian product $\textbf{A} \times \textbf{B}$ has $\mathnormal{n} \cdot \mathnormal{n}$ members
+	which is also a finite number. By \textbf{Lemma 1.1} this finite set is enumerable.
+	\end{proof}
 	
+	\bigskip 
+		
+	\begin{thm}The union of an enumerable set of enumerable sets is itself enumerable.\end{thm}
+	\begin{proof}
+	Let \textbf{A} be an enumerable set of enumerable sets. The members of \textbf{A} can be enumerated
+	as $(a_{1}, a_{2}, a_{3},\dots)$. The members of each $a_{i}$ can be enumerated as $(a_{i1}, a_{i2}, a_{i3},
+	\dots)$. We can arrange them on a two-dimensional grid as follows: 
+	\begin{center}
+	$\begin{tabu}{ l c c r }
+		a_{1} & a_{11} & a_{21} & \dots \\
+		a_{2} & a_{12} & a_{22} & \dots \\
+		a_{3} & a_{13} & a_{23} & \dots \\
+		\vdots & \vdots & \vdots & \ddots \\
+	\end{tabu}$ \\
+	\end{center}
+	\smallskip
+	$\bigcup \textbf{A}$ can now be enumerated by sweeping through the grid in a triangular fashion:
+	$(a_{1}, a_{11}, a_{2}, a_{21}, a_{12}, a_{3}, \dots)$.
+	\end{proof}
 
-	\subsection*{Conclusion:}
-	(work in progress)
+	\bigskip
+
+	\begin{thm} The set of all finite sequences of positive integers is enumerable. \end{thm}
+	\begin{proof}
+	Let \textbf{S} be the set of all finite sequences of positive integers. \textbf{S} is the union of length-1 
+	sequences, length-2 sequences, length-3 sequences, etc. Each length-$\mathnormal{n}$ sequence
+	is a Cartesian product of two finite sets which by \textbf{Lemma 4.1} is enumerable. Therefore by 
+	\textbf{Theorem 4.1} the $\bigcup \textbf{S}$ is enumerable.
+	\end{proof}
 
 \end{document}
