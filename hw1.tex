@@ -48,7 +48,7 @@
 		
 		\bigskip
 		
-	\begin{thm}The intersection of two enumerable sets is enumerable.\end{thm}
+	\begin{lem}The intersection of two enumerable sets is enumerable.\end{lem}
 		\begin{proof}
 		Let $\mathnormal{f}: \mathbb{N} \rightarrow \textbf{A}$ represent a function that enumerates the 	first set. Let $\mathnormal{g}: \mathbb{N} \rightarrow \textbf{B}$ 
 		represent a function that enumerates the second set. Let $\mathnormal{h}: \mathbb{N} \rightarrow 
@@ -60,7 +60,7 @@
 		
 	\subsection*{Conclusion:}
 	\begin{proof}
-	By \textbf{Lemma 1.1} the set \textbf{S} is enumerable.  By \textbf{Theorem 1.1} the intersection
+	By \textbf{Lemma 1.1} the set \textbf{S} is enumerable.  By \textbf{Lemma 1.2} the intersection
 	of \textbf{S} and \textbf{T} is enumerable.
 	\end{proof}
 		
@@ -78,7 +78,7 @@
 	\subsection*{Conclusion:}
 	\begin{proof}
 	Let \textbf{S} be a enumerable set of enumerable sets. Pick a set $\textbf{A} \in \textbf{S}$. Let
-	\textbf{B} be $\bigcap (\textbf{S} - \textbf{A})$. By \textbf{Theorem 1.1} we can define a function 
+	\textbf{B} be $\bigcap (\textbf{S} - \textbf{A})$. By \textbf{Lemma 1.2} we can define a function 
 	$\mathnormal{h}: \mathbb{N} \rightarrow \textbf{A} \cap \textbf{B}$ that enumerates $\bigcap \textbf{S}$.	
 	\end{proof}
 	
@@ -110,16 +110,17 @@
 	
 	\bigskip
 	
-	\begin{lem} The Cartesian product of two finite sets is enumerable. \end{lem}
+	\begin{lem} For any $\mathnormal{n}$, the set of $\mathnormal{n}$-member sequences is enumerable.\end{lem}
 	\begin{proof}
-	Let \textbf{A} and \textbf{B} be two sets with a finite number $\mathnormal{n}$ many members.
-	The Cartesian product $\textbf{A} \times \textbf{B}$ has $\mathnormal{n} \cdot \mathnormal{n}$ members
-	which is also a finite number. By \textbf{Lemma 1.1} this finite set is enumerable.
+	We proceed by induction. The base case of a 1 member sequence is trivially enumerable. An 
+	$\mathnormal{n}$-member sequence has a finite number of members and is enumerable by 
+	\textbf{Lemma 1.1}. An $\mathnormal{n + 1}$ member sequence also has a finite number of 
+	members and is also enumerable by \textbf{Lemma 1.1}.
 	\end{proof}
-	
+
 	\bigskip
-	
-	\begin{thm}The union of an enumerable set of enumerable sets is itself enumerable.\end{thm}
+		
+	\begin{lem}The union of an enumerable set of enumerable sets is itself enumerable.\end{lem}
 	\begin{proof}
 	Let \textbf{A} be an enumerable set of enumerable sets. The members of \textbf{A} can be enumerated
 	as $(a_{1}, a_{2}, a_{3},\dots)$. The members of each $a_{i}$ can be enumerated as $(a_{i1}, a_{i2}, a_{i3},
@@ -141,10 +142,11 @@
 
 	\subsection*{Conclusion:}	
 	\begin{proof}
-	Let \textbf{S} be the set of all finite sequences of positive integers. \textbf{S} is the union of all one member 
-	sequences, all two member sequences, all three member sequences, and so on. Each $\mathnormal{n}$-member sequence
-	is a Cartesian product of two finite sets which by \textbf{Lemma 4.1} is enumerable. Therefore by 
-	\textbf{Theorem 4.1} the $\bigcup \textbf{S}$ is enumerable.
+	Let \textbf{A} be a set of sets where each member is a set containing all the $\mathnormal{n}$-member 
+	sequences of a particular $\mathnormal{n}$. Each member of \textbf{A} is enumerable by \textbf{Lemma 
+	4.1}. The $\bigcup \textbf{A}$ is enumerable by \textbf{Lemma 4.2}. Let \textbf{S} be the set of all finite
+	sequences of positive integers. By definition $\textbf{S} = \bigcup \textbf{A}$, therefore \textbf{S} is 
+	enumerable.
 	\end{proof}
 
 \end{document}
