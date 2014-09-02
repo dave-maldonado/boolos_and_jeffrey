@@ -49,8 +49,8 @@
 		
 	\begin{thm}The intersection of two enumerable sets is enumerable.\end{thm}
 		\begin{proof}
-		Let $\textbf{K} \subseteq \mathbb{N}$. Let $\mathnormal{f}: \textbf{K} \rightarrow \textbf{A}$ represent 		a function that enumerates the first set. Let $\mathnormal{g}: \textbf{K} \rightarrow \textbf{B}$ 
-		represent a function that enumerates the second set. Let $\mathnormal{h}: \textbf{K} \rightarrow 
+		Let $\mathnormal{f}: \mathbb{N} \rightarrow \textbf{A}$ represent 		a function that enumerates the 	first set. Let $\mathnormal{g}: \mathbb{N} \rightarrow \textbf{B}$ 
+		represent a function that enumerates the second set. Let $\mathnormal{h}: \mathbb{N} \rightarrow 
 		\textbf{A} \cap \textbf{B}$ be a new function defined as follows: 
 		\bigskip
 		\begin{equation*} \hspace*{-1cm}  h(x) = \begin{cases} f(x) &\mbox{if } x \in \textbf{B} \\ 
@@ -70,8 +70,13 @@
 	\subsection*{Premise:}
 	The intersection of an enumerable set of enumerable sets is itself enumerable.
 
-	\subsection*{Conclusion:}
-	foo
+	\bigskip
+	
+	\begin{proof}
+	Let \textbf{S} be a enumerable set of enumerable sets. Pick a set \textbf{A} from \textbf{S}. Let
+	\textbf{B} be $\bigcap \textbf{S} - \textbf{A}$. By \textbf{Theorem 1.1} we can define a function 
+	$\mathnormal{h}: \mathbb{N} \rightarrow \textbf{A} \cap \textbf{B}$ that enumerates $\bigcap \textbf{S}$.	
+	\end{proof}
 
 % QUESTION 3
 
@@ -90,6 +95,11 @@
 
 	\subsection*{Premise:}
 	The set of all finite sequences of positive integers is enumerable.
+	
+	\bigskip
+	
+	\begin{thm}foo\end{thm}
+	
 
 	\subsection*{Conclusion:}
 	foo
