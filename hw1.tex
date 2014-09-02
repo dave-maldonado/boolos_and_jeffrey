@@ -59,8 +59,10 @@
 		\end{proof}
 		
 	\subsection*{Conclusion:}
+	\begin{proof}
 	By \textbf{Lemma 1.1} the set \textbf{S} is enumerable.  By \textbf{Theorem 1.1} the intersection
 	of \textbf{S} and \textbf{T} is enumerable.
+	\end{proof}
 		
 \pagebreak
 
@@ -73,22 +75,44 @@
 
 	\bigskip
 	
+	\subsection*{Conclusion:}
 	\begin{proof}
 	Let \textbf{S} be a enumerable set of enumerable sets. Pick a set $\textbf{A} \in \textbf{S}$. Let
 	\textbf{B} be $\bigcap (\textbf{S} - \textbf{A})$. By \textbf{Theorem 1.1} we can define a function 
 	$\mathnormal{h}: \mathbb{N} \rightarrow \textbf{A} \cap \textbf{B}$ that enumerates $\bigcap \textbf{S}$.	
 	\end{proof}
+	
+\bigskip
 
 % QUESTION 3
 
 \section{It takes two...}
 
 	\subsection*{Proposition:}
-	Let \textbf{F} be a set of \textit{one to one} functions that both i) have a domain that's a subset of the positive
+	Let \textbf{F} be the set of all \textit{one to one} functions that both i) have a domain that's a subset of the positive
 	integers, and ii) are \textit{onto} a two element set \{a,b\}. \textbf{F} is enumerable.
+	
+	\bigskip
+	
+	\begin{lem} The Cartesian product of two finite sets is enumerable. \end{lem}
+	\begin{proof}
+	Let \textbf{A} and \textbf{B} be two sets with a finite number $\mathnormal{n}$ many members.
+	The Cartesian product $\textbf{A} \times \textbf{B}$ has $\mathnormal{n} \cdot \mathnormal{n}$ members
+	which is also a finite number. By \textbf{Lemma 1.1} this finite set is enumerable.
+	\end{proof}
+	
+	\bigskip
+	
+	\begin{thm} Any set of enumerable sets is enumerable \end{thm}
+	I'm probably going the wrong direction with this proof as I can't figure out how to prove this. Or even
+	if this is correct (I have a gut feeling it's not).
 
-	\subsection*{Conclusion:}
-	(work in progress)
+	\subsection*{Conclusion: IN PROGRESS - NOT YET PROVED}
+	\begin{proof}
+	each $\textbf{f} \in \textbf{F}$ can be represented as a Cartesian product of finite sets:
+	($\{k_{1}, k_{2}\} \subset \mathbb{N}) \times \{a, b\}$. By \textbf{Lemma 3.1} each $\textbf{f} \in \textbf{F}$ is 
+	enumerable. By \textbf{Theorem 3.1} the set F is enumerable.
+	\end{proof}
 	
 \pagebreak
 
@@ -101,15 +125,6 @@
 	
 	\bigskip
 	
-	\begin{lem} The Cartesian product of two finite sets is enumerable. \end{lem}
-	\begin{proof}
-	Let \textbf{A} and \textbf{B} be two sets with a finite number $\mathnormal{n}$ many members.
-	The Cartesian product $\textbf{A} \times \textbf{B}$ has $\mathnormal{n} \cdot \mathnormal{n}$ members
-	which is also a finite number. By \textbf{Lemma 1.1} this finite set is enumerable.
-	\end{proof}
-	
-	\bigskip 
-		
 	\begin{thm}The union of an enumerable set of enumerable sets is itself enumerable.\end{thm}
 	\begin{proof}
 	Let \textbf{A} be an enumerable set of enumerable sets. The members of \textbf{A} can be enumerated
@@ -130,11 +145,11 @@
 
 	\bigskip
 
-	\begin{thm} The set of all finite sequences of positive integers is enumerable. \end{thm}
+	\subsection*{Conclusion:}	
 	\begin{proof}
-	Let \textbf{S} be the set of all finite sequences of positive integers. \textbf{S} is the union of length-1 
-	sequences, length-2 sequences, length-3 sequences, etc. Each length-$\mathnormal{n}$ sequence
-	is a Cartesian product of two finite sets which by \textbf{Lemma 4.1} is enumerable. Therefore by 
+	Let \textbf{S} be the set of all finite sequences of positive integers. \textbf{S} is the union of one member 
+	sequences, two member sequences, three member sequences, etc. Each $\mathnormal{n}$-member sequence
+	is a Cartesian product of two finite sets which by \textbf{Lemma 3.1} is enumerable. Therefore by 
 	\textbf{Theorem 4.1} the $\bigcup \textbf{S}$ is enumerable.
 	\end{proof}
 
