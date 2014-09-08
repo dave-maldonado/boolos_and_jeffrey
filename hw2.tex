@@ -16,6 +16,8 @@
 \usepackage{textcomp}
 \usepackage{verbatim}
 \usepackage{tabu}
+\usepackage{tikz}
+\usetikzlibrary{trees}
 
 \newtheorem{lem}{Lemma}[section]
 \newtheorem{thm}{Theorem}[section]
@@ -37,7 +39,26 @@
 	\bigskip
 
 	\subsection*{Conclusion:}
-	(in progress)
+	\begin{proof}
+	Starting from the single origin node at the first level $d = 1$ the amount of nodes on each level
+	is $2^{d}$. The nodes can be counted simply starting at the origin like so:
+	\begin{center}
+	\begin{tikzpicture}[level distance=1.5cm,
+		level 1/.style={sibling distance=3cm},
+		level 2/.style={sibling distance=1.5cm}]
+	\node {1}
+		child {node {2}
+			child {node {4}}
+			child {node {5}}
+		}
+		child {node {3}
+			child {node {6}}
+			child {node {7 \dots}}
+		};
+	\end{tikzpicture}
+	\end{center}
+	
+	\end{proof}
 
 % QUESTION 2
 
