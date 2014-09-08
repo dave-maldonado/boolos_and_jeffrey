@@ -106,6 +106,7 @@
 		\vdots & \vdots &\vdots &\vdots &\ddots \\
 	\end{tabu}$ \\
 	\end{center}	
+	\smallskip
 	$\textbf{F}$ can now be enumerated by sweeping through the grid in a triangular fashion:
 	$(f(1,1), f(1,2), f(2,1), f(1,3), f(2,2), f(3,1), \dots)$.
 	\end{proof}
@@ -123,19 +124,25 @@
 	
 	\begin{lem} For any $\mathnormal{n}$, the set of $\mathnormal{n}$-member sequences is enumerable.\end{lem}
 	\begin{proof}
-	We proceed by induction. The base case of a 1 member sequence is trivially enumerable. An 
-	$\mathnormal{n}$-member sequence has a finite number of members and is enumerable by 
-	\textbf{Lemma 1.1}. An $\mathnormal{n + 1}$ member sequence also has a finite number of 
-	members and is also enumerable by \textbf{Lemma 1.1}.
+	We proceed by induction. 	Let $\textbf{A}_{\mathnormal{n}}$ be the set of all n-member sequences of
+	$\mathbb{N}$. The base case of $\textbf{A}_{0}$ is trivially enumerable. $\textbf{A}_{0} = \emptyset$, so
+	a sequence of length 0 is a function $f : \emptyset \rightarrow \mathbb{N}$ which is enumerable by 	
+	convention. For the inductive step suppose $\textbf{A}_{n}$ is enumerable by the list $(a_{1}, a_{2}, a_{3}, 
+	\dots, a_{n})$ where  $a_{i}$ is an sequence of length $n$. We can construct $\textbf{A}_{n+1}$ by 
+	appending a number $n \in \mathbb{N}$ to each $a_{i} \in \textbf{A}_{n+1}.$ $\textbf{A}_{n+1}$ is
+	then enumerable by a list $(a_{1}, a_{2}, a_{3}, \dots, a_{n})$ using the preceding procedure to construct
+	each $a_{i}.$
+	Therefore by induction for any $\mathnormal{n}$ the set of $\mathnormal{n}$-member sequences is 
+	enumerable.
 	\end{proof}
 
 	\bigskip
 		
 	\begin{lem}The union of an enumerable set of enumerable sets is itself enumerable.\end{lem}
 	\begin{proof}
-	Let \textbf{A} be an enumerable set of enumerable sets. The members of \textbf{A} can be enumerated
-	as $(a_{1}, a_{2}, a_{3},\dots)$. The members of each $a_{i}$ can be enumerated as $(a_{i1}, a_{i2}, a_{i3},
-	\dots)$. We can arrange them on a two-dimensional grid as follows: 
+	Let \textbf{A} be an enumerable set of enumerable sets. The members $\mathnormal{a} \in \textbf{A}$
+	can be enumerated as $(a_{1}, a_{2}, a_{3},\dots)$. The members of each $a_{i}$ can be enumerated as 
+	$(a_{i1}, a_{i2}, a_{i3}, \dots)$. We can arrange them on a two-dimensional grid as follows: 
 	\begin{center}
 	$\begin{tabu}{ l c c r }
 		a_{1} & a_{11} & a_{21} & \dots \\
