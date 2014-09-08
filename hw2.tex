@@ -70,7 +70,23 @@
 	\bigskip
 	
 	\subsection*{Conclusion:}
-	(in progress)
+	\begin{proof}
+	Let each path $p_{n}$ from a particular node be represented by 0 and 1. With this encoding each path 
+	beginning from the origin can be represented as a binary string of 0's and 1's. We can arrange the 
+	paths in a two dimensional grid:
+		\begin{center}
+	$\begin{tabu}{ l | c c c c c r }
+		p_{1} & 0 & 1 & 0 & 0 & 1 & \dots \\
+		p_{2} & 1 & 0 & 0 & 0 & 0 & \dots \\
+		p_{3} & 1 & 1 & 0 & 1 & 1 & \dots \\
+		\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
+	\end{tabu}$ \\
+	\end{center}
+	\smallskip
+	We can create a new path not contained in our representation by taking the converse of 
+	each binary digit along the diagonal $(1, 1, 1, \dots)$. Therefore by diagonalization we have 
+	shown the paths are \textit{not} enumerable. 
+	\end{proof} 
 	
 \bigskip
 
