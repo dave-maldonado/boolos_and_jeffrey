@@ -31,11 +31,6 @@
 
 \section{A question about $\cap$} 
 
-	\subsection*{Proposition:}
-	The intersection of a finite set \textbf{S} and an enumerable set \textbf{T} is enumerable.
-	
-	\bigskip
-
 	\begin{lem}Any finite set is enumerable.\end{lem}
 		\begin{proof}
 		Let \textbf{S} be a finite set with \textit{n} elements. Let \textbf{K} = \{1,2,\dots,\textit{n}\}. 
@@ -58,7 +53,10 @@
 		undefined & \mbox{if } f(x) \notin \textbf{B}. \end{cases} \end{equation*}
 		\end{proof}
 		
-	\subsection*{Conclusion:}
+	\begin{thm}
+	The intersection of a finite set \textbf{S} and an enumerable set \textbf{T} is enumerable.
+	\end{thm}
+	
 	\begin{proof}
 	By \textbf{Lemma 1.1} the set \textbf{S} is enumerable.  By \textbf{Lemma 1.2} the intersection
 	of \textbf{S} and \textbf{T} is enumerable.
@@ -70,12 +68,10 @@
 
 \section{A slightly harder question about $\cap$}
 
-	\subsection*{Proposition:}
+	\begin{thm}
 	The intersection of an enumerable set of enumerable sets is itself enumerable.
+	\end{thm}
 
-	\bigskip
-	
-	\subsection*{Conclusion:}
 	\begin{proof}
 	Let \textbf{S} be a enumerable set of enumerable sets. Pick a set $\textbf{A} \in \textbf{S}$. Let
 	\textbf{B} be $\bigcap (\textbf{S} - \textbf{A})$. By \textbf{Lemma 1.2} we can define a function 
@@ -88,13 +84,11 @@
 
 \section{It takes two...}
 
-	\subsection*{Proposition:}
+	\begin{thm}
 	Let \textbf{F} be the set of all \textit{one to one} functions that both i) have a domain that's a subset of the positive
 	integers, and ii) are \textit{onto} a two element set \{a,b\}. \textbf{F} is enumerable.
-	
-	\bigskip
-	
-	\subsection*{Conclusion:}
+	\end{thm}
+
 	\begin{proof}
 	We can arrange each function $\mathnormal{f} \in \textbf{F}$ in a two dimensional grid as follows:
 	\begin{center}
@@ -117,11 +111,6 @@
 
 \section{Enumerate all the things!}
 
-	\subsection*{Proposition:}
-	The set of all finite sequences of positive integers is enumerable.
-	
-	\bigskip
-	
 	\begin{lem} For any $\mathnormal{n}$, the set of $\mathnormal{n}$-member sequences is enumerable.\end{lem}
 	\begin{proof}
 	We proceed by induction. 	Let $\textbf{A}_{\mathnormal{n}}$ be the set of all n-member sequences of
@@ -158,7 +147,8 @@
 
 	\bigskip
 
-	\subsection*{Conclusion:}	
+	\begin{thm}The set of all finite sequences of positive integers is enumerable.\end{thm}
+
 	\begin{proof}
 	Let \textbf{A} be a set of sets where each member is a set containing all the $\mathnormal{n}$-member 
 	sequences of a particular $\mathnormal{n}$. Each member of \textbf{A} is enumerable by \textbf{Lemma 
