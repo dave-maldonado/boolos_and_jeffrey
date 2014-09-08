@@ -33,58 +33,60 @@
 
 \section{All nodes lead to Rome.} 
 
-	\subsection*{Proposition:}
-	The set of nodes of an infinite binary tree is enumerable.
+	\begin{thm}The set of nodes of an infinite binary tree is enumerable.\end{thm}
 	
-	\bigskip
-
-	\subsection*{Conclusion:}
 	\begin{proof}
 	Starting from the single origin node at the first level $d = 1$ the amount of nodes on each level
-	is $2^{d}$. The nodes can be counted simply starting at the origin like so:
+	is $2^{d}$. The nodes can simply be counted by starting at the origin and moving left to right at each
+	level:
 	\begin{center}
 	\begin{tikzpicture}[level distance=1.5cm,
-		level 1/.style={sibling distance=3cm},
-		level 2/.style={sibling distance=1.5cm}]
+		level 1/.style={sibling distance=4cm},
+		level 2/.style={sibling distance=2cm}]
 	\node {1}
 		child {node {2}
-			child {node {4}}
-			child {node {5}}
+			child {node {4}
+				child {node {\vdots}}}
+			child {node {5}
+				child {node {\vdots}}}
 		}
 		child {node {3}
-			child {node {6}}
-			child {node {7 \dots}}
+			child {node {6}
+				child{node {\vdots}}}
+			child {node {7}
+				child{node {\vdots}}}
 		};
 	\end{tikzpicture}
 	\end{center}
 	
 	\end{proof}
 
+\pagebreak
+
 % QUESTION 2
 
 \section{What a long, strange trip it's been.}
 
-	\subsection*{Proposition:}
-	The set of infinite paths beginning at the origin down an infinite binary tree is \textit{not} enumerable.
-
-	\bigskip
+	\begin{thm}
+	The set of infinite paths beginning at the origin down an infinite binary tree is \textit{not} enumerable.		
+	\end{thm}
 	
-	\subsection*{Conclusion:}
 	\begin{proof}
 	Let each pair of paths from a particular node be represented by 0 and 1. With this encoding each path
 	$p_{n}$, beginning from the origin, can be represented as a binary string of 0's and 1's. We can arrange the 
 	paths in a two dimensional grid:
 		\begin{center}
 	$\begin{tabu}{ l | c c c c c r }
-		p_{1} & 0 & 1 & 0 & 0 & 1 & \dots \\
-		p_{2} & 1 & 0 & 0 & 0 & 0 & \dots \\
-		p_{3} & 1 & 1 & 0 & 1 & 1 & \dots \\
-		\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
+		p_{1} & 0 & 1 & 0 & 0 & \dots \\
+		p_{2} & 1 & 0 & 0 & 0 & \dots \\
+		p_{3} & 1 & 1 & 0 & 1 & \dots \\
+		p_{3} & 0 & 0 & 1 & 1 & \dots \\
+		\vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
 	\end{tabu}$ \\
 	\end{center}
 	\smallskip
 	We can create a new path not contained in our representation by taking the converse of 
-	each binary digit along the diagonal $(1, 1, 1, \dots)$. Therefore by diagonalization we have 
+	each binary digit along the diagonal $(1, 1, 1, 0, \dots)$. Therefore by diagonalization we have 
 	shown the paths are \textit{not} enumerable. 
 	\end{proof} 
 	
@@ -94,26 +96,26 @@
 
 \section{$\mathbb{N}$ \textit{into} $\mathbb{N}$}
 
-	\subsection*{Proposition:}
-	Where $\mathbb{N}$ is the set of positive integers, prove that the set of all \textit{one-to-one}, \textit{total}
+	\begin{thm}
+	Where $\mathbb{N}$ is the set of positive integers, the set of all \textit{one-to-one}, \textit{total}
 	functions from $\mathbb{N}$ \textit{into} $\mathbb{N}$ is not enumerable.
+	\end{thm}
 	
-	\bigskip
-	
-	\subsection*{Conclusion:}
+	\begin{proof}
 	(in progress)
+	\end{proof}
 
 % QUESTION 4
 
 \section{$\mathbb{N}$ \textit{onto} $\mathbb{N}$}
 
-	\subsection*{Proposition:}
-	Where $\mathbb{N}$ is the set of positive integers, prove that the set of all \textit{one-to-one}, \textit{total}
+	\begin{thm}
+	Where $\mathbb{N}$ is the set of positive integers, the set of all \textit{one-to-one}, \textit{total}
 	functions from $\mathbb{N}$ \textit{onto} $\mathbb{N}$ is not enumerable.
+	\end{thm}
 	
-	\bigskip
-	
-	\subsection*{Conclusion:}	
+	\begin{proof}
 	(in progress)
+	\end{proof}
 
 \end{document}
