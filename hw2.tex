@@ -75,7 +75,7 @@
 	Let each pair of paths from a particular node be represented by 0 and 1. With this encoding each path
 	$p_{n}$, beginning from the origin, can be represented as a binary string of 0's and 1's. We can arrange the 
 	paths in a two dimensional grid:
-		\begin{center}
+	\begin{center}
 	$\begin{tabu}{ l | c c c c c r }
 		p_{1} & 0 & 1 & 0 & 0 & \dots \\
 		p_{2} & 1 & 0 & 0 & 0 & \dots \\
@@ -85,8 +85,8 @@
 	\end{tabu}$ \\
 	\end{center}
 	\smallskip
-	We can create a new path not contained in our representation by taking the converse of 
-	each binary digit along the diagonal $(1, 1, 1, 0, \dots)$. Therefore by diagonalization we have 
+	We can create a new path not contained in our representation by constructing the anti-diagonal
+	 $(1, 1, 1, 0, \dots)$. Therefore by diagonalization we have 
 	shown the paths are \textit{not} enumerable. 
 	\end{proof} 
 	
@@ -102,7 +102,25 @@
 	\end{thm}
 	
 	\begin{proof}
-	(in progress)
+	We can represent the set of all total, injective, non-surjective functions on $\mathbb{N}$ as a two 
+	dimensional grid of sequences $s_{n}$ of ordered pairs:
+	\begin{center}
+	$\begin{tabu}{ l | c c c c c r }
+		s_{1} & (1,2) & (2,3) & (3,4) & (4,5) & \dots \\
+		s_{2} &(1,2) & (2,4) & (3,6) & (4,8) & \dots \\
+		s_{3} & (1,1) & (2,3) & (3,5) & (4,7) & \dots \\
+		s_{3} & (1,3) & (2,6) & (3,9) & (4,12) & \dots \\
+		\vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
+	\end{tabu}$ \\
+	\end{center}
+	\smallskip
+	We can create a sequence $s$ not contained in our representation by constructing the 
+	anti-diagonal $<(1,1), (2,3), (3,6), (5,11), \dots>$. Each item $d_{n}$ of the anti-diagonal can be generated 
+	by the function:
+	\begin{equation*}d(n) = (n,\begin{cases} n + 1 &\mbox{if } n \text{ is odd}\\ 
+		n - 1 & \mbox{if } n \text{ is even}. \end{cases})\end{equation*}
+	Therefore by diagonalization we have shown the set of all total, injective, non-surjective functions
+	on $\mathbb{N}$ is not enumerable.
 	\end{proof}
 
 % QUESTION 4
@@ -115,7 +133,26 @@
 	\end{thm}
 	
 	\begin{proof}
-	(in progress)
+	We can represent the set of all total, bijective functions on $\mathbb{N}$ as a two 
+	dimensional grid of permutations $p_{n}$ :
+	\begin{center}
+	$\begin{tabu}{ l | c c c c c r }
+		p_{1} & 1 & 2 & 3 & 4 & \dots \\
+		p_{2} & 3 & 2 & 6 & 7 & \dots \\
+		p_{3} & 1 & 4 & 3 & 8 & \dots \\
+		p_{3} & 8 & 4 & 2 & 5 & \dots \\
+		\vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
+	\end{tabu}$ \\
+	\end{center}
+	\smallskip
+	We can create a permutation $p$ not contained in our representation by constructing the 
+	anti-diagonal $d_{n}$ by the formula:
+	\begin{equation*}
+		d(n) = \begin{cases} n + 1 &\mbox{if } n \text{ is odd}\\ 
+		n - 1 & \mbox{if } n \text{ is even}. \end{cases}
+	\end{equation*}
+	Therefore by diagonalization we have shown the set of all total, bijective functions on $\mathbb{N}$
+	is not enumerable.
 	\end{proof}
 
 \end{document}
