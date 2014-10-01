@@ -72,6 +72,29 @@
 
 \subsection{f(x,y) = x}
 
+	\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2cm,semithick]
+		\tikzstyle{every state}=[fill=red,draw=none,text=white]
+		
+		\node[initial,state] (A)		{$q_1$};
+		\node[state] (B) [right of=A] 	{$q_2$};
+		\node[state] (C) [right of=B]	{$q_3$};
+		\node[state] (D) [right of=C]	{$q_4$};
+		\node[state] (E) [right of=D]	{$q_5$};
+		\node[state] (F) [right of=E]	{$q_6$};
+		
+		\path (A) edge [loop above]	node {1:R} (A)
+			       edge 				node {0:R} (B)
+			 (B) edge [loop above]	node {1:0}  (A)
+			       edge				node {0:R} (C)
+			 (C) edge [bend left]		node {1:1} (B)
+			       edge				node {0:L} (D)
+			 (D) edge [loop above]	node {0:L} (D)
+			       edge				node {1:L} (E)
+			 (E) edge [loop above]	node {1:L} (E)
+			       edge				node {0:R} (F);
+
+	\end{tikzpicture}
+
 \subsection{average of x and y}
 
 \subsection{f(x) = 2x in 7 states or less!}
