@@ -1,0 +1,79 @@
+\documentclass[a4paper,11pt]{article}
+
+\author{David Maldonado, $\href{mailto:david.m.maldonado@gmail.com}%
+{david.m.maldonado@gmail.com}$}
+\title{Boolos and Jeffrey - HW4}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bussproofs}
+\usepackage{cite}
+\usepackage[pdftex]{hyperref}
+\usepackage{latexsym}
+\usepackage{listings}
+\usepackage{synttree}
+\usepackage{textcomp}
+\usepackage{verbatim}
+\usepackage{tabu}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usetikzlibrary{arrows, automata}
+\usepackage[latin1]{inputenc}
+
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{con}{Conclusion}[section]
+
+\begin{document}
+
+\maketitle
+
+\bigskip
+
+% QUESTION 1
+
+\section{some equivalence proofs...} 
+
+\begin{thm}$\lnot Qv F \cong Q'v \lnot F $\end{thm}
+	
+	\begin{proof}
+		We'll begin with the first case: 
+		
+		\begin{equation} \lnot \forall v F \cong \exists v \lnot F \end{equation}
+		
+		The implication $\lnot \forall v F \implies \exists v \lnot F$ is proven simply by noting that if we assume 
+		$\lnot \forall v F$ to be \textbf{true} that means there exists at least one term in a model that makes 
+		$\lnot F$ \textbf{true}, which is precisely the statement on the right-hand side.
+		
+		The converse implication $\lnot \forall v F \impliedby \exists v \lnot F$ is proven in the same way by
+		assuming $\exists v \lnot F$ to be \textbf{true}. It follows directly that because there is at least one term
+		in a model that makes $\lnot F$ \textbf{true} not all models make $F$ true which is the statement 			on the left-hand side.
+		
+		\bigskip
+		
+		For the second case:
+		
+		\begin{equation} \lnot \exists v F \cong \forall v \lnot F \end{equation}
+		
+		The implication $\lnot \exists v F \implies \forall v \lnot F$ is proven by first assuming $\lnot \exists v F$ 
+		is \textbf{true}. With this assumption we can say that there does not exist a model where F is 
+		\textbf{true}, this is essentially the statement on the right-hand side
+	\end{proof}
+	
+\setcounter{equation}{0}
+	
+% QUESTION 2	
+	
+\section{proof of prenex normal form}
+
+\begin{thm} Where \textbf{prenex normal form} is a formula where all the quantifiers are written as a string at the front and range over the quantifier-free portion, every formula in first-order logic has an equivalent prenex normal form. \end{thm}
+
+	
+	\begin{proof}
+		We will proceed by induction. Let us first agree on the following equivalences:
+		
+		\begin{equation} \lnot Qv F \cong Q'v \lnot F \end{equation}
+	\end{proof}
+	
+\end{document}
