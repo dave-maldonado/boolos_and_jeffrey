@@ -31,9 +31,13 @@
 
 \bigskip
 
+
+In the following theorems $Q$ stands for \textit{either} quantifier and $Q'$ for its counterpart. $v$ stands for 
+a quantified variable, and $F$ and $G$ for first-order logical formulas with no free variables.
+
 % QUESTION 1
 
-\section{some equivalence proofs...} 
+\section{some equivalence proofs...}
 
 \begin{thm}$\lnot Qv F \cong Q'v \lnot F $\end{thm}
 	
@@ -48,7 +52,7 @@
 		
 		The converse implication $\lnot \forall v F \impliedby \exists v \lnot F$ is proven in the same way by
 		assuming $\exists v \lnot F$ to be \textbf{true}. It follows directly that because there is at least one term
-		in a model that makes $\lnot F$ \textbf{true} not all models make $F$ true which is the statement 			on the left-hand side.
+		in a model that makes $\lnot F$ \textbf{true} not all terms make $F$ \textbf{true} which is the statement 			on the left-hand side.
 		
 		\bigskip
 		
@@ -57,11 +61,17 @@
 		\begin{equation} \lnot \exists v F \cong \forall v \lnot F \end{equation}
 		
 		The implication $\lnot \exists v F \implies \forall v \lnot F$ is proven by first assuming $\lnot \exists v F$ 
-		is \textbf{true}. With this assumption we can say that there does not exist a model where F is 
-		\textbf{true}, this is essentially the statement on the right-hand side
+		is \textbf{true}. With this assumption we can say that there does not exist a term $v$ such that F is 
+		\textbf{true}, this leads to the right-hand statement that for all terms $\lnot F$ is \textbf{true}.
+		
+		The converse implication $\lnot \exists v F \impliedby \forall v \lnot F$ is proven by assuming 
+		$\forall v \lnot F$ is \textbf{true}. Now we can see that for all terms $\lnot F$ is \textbf{true}, therefore
+		there \textit{does not} exist a term that makes $F$ \textbf{true}, which is the left-hand statement.
 	\end{proof}
 	
 \setcounter{equation}{0}
+
+\pagebreak
 	
 % QUESTION 2	
 	
@@ -74,6 +84,23 @@
 		We will proceed by induction. Let us first agree on the following equivalences:
 		
 		\begin{equation} \lnot Qv F \cong Q'v \lnot F \end{equation}
+		\begin{equation} Qv F \land G \cong Qv(F \land G) \end{equation}
+		\begin{equation} G \land Qv F \cong Qv(G \land F) \end{equation}	
+		\begin{equation} Qv F \lor G \cong Qv(F \lor G) \end{equation}
+		\begin{equation} G \lor Qv F \cong Qv(G \lor F) \end{equation}
+		\begin{equation} Qv F  \rightarrow G \cong Q'v(F \rightarrow G) \end{equation}
+		\begin{equation} G \rightarrow Qv F \cong Qv(G \rightarrow F) \end{equation}
+		
+		\bigskip
+		
+		and the \textbf{principle of substitution of equivalents}:
+		
+		\begin{equation} Qv F \cong Qw F_{v} w \end{equation}
+		
+		\bigskip
+		
+		wow
+		
 	\end{proof}
 	
 \end{document}
