@@ -95,10 +95,19 @@ a quantified variable, and $F$ and $G$ for first-order logical formulas with no 
 		The converse implication $\forall v F \land G \impliedby \forall v(F \land G)$ is proven using 
 		the same argument in reverse. If we assume a model $\mathcal{M}$ that satisfies 
 		$\forall v(F \land G)$ we can say that all $a \in \mathcal{M}$ make $F \land G$ \textbf{true}.
-		We can then say that $\mathcal{M}$ satisfies $F$ and $\mathcal{M}$ satisfies $G$. With
-		this argument we can see that since all $a \in \mathcal{M}$ make $F$ \textbf{true} and $v$
-		does not appear free in G (something's not right here...)
-	\end{proof}
+		We can then say that $\mathcal{M}$ satisfies $F$ and $\mathcal{M}$ satisfies $G$. 
+		(kind of got stuck here, so we have $F$ and $G$ seperately satisfied by $\mathcal{M}$, 
+		how do I recombine them on the other side to make $\forall v Fv \land G$ ????)
+		
+		\begin{equation} \exists v F \land G \cong \exists v(F \land G) \end{equation}
+		
+		In the second case we'll start with the implication $\exists vF \land G \implies \exists v(F \land G)$.
+		We'll assume a model $\mathcal{M}$ that satisfies $\exists vF \land G$. This means that 
+		$\mathcal{M}$ satisfies $\exists vF$ and $\mathcal{M}$ satisfies $G$. (I'm assuming I'm going to 
+		use the same argument as $\forall$ but if I can only say there exists an $a \in \mathcal{M}$ 
+		that makes $F$ \textbf{true} can I generalize and say $\mathcal{M}$ satisfies F? or do I have to think 		about another strategy?)
+		
+ 	\end{proof}
 	
 \setcounter{equation}{0}
 
