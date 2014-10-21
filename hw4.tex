@@ -46,13 +46,14 @@ a quantified variable, and $F$ and $G$ for first-order logical formulas with no 
 		
 		\begin{equation} \lnot \forall v F \cong \exists v \lnot F \end{equation}
 		
-		The implication $\lnot \forall v F \implies \exists v \lnot F$ is proven simply by noting that if we assume 
-		$\lnot \forall v F$ to be \textbf{true} that means there exists at least one term in a model that makes 
-		$\lnot F$ \textbf{true}, which is precisely the statement on the right-hand side.
+		The implication $\lnot \forall v F \implies \exists v \lnot F$ is proven as follows. Let $\mathcal{M}$ be 
+		a model that satisfies $\lnot \forall v F$. That means there exists at least one $a \in \mathcal{M}$ 
+		that makes $\lnot F$ \textbf{true}, which is precisely the statement on the right-hand side.
 		
 		The converse implication $\lnot \forall v F \impliedby \exists v \lnot F$ is proven in the same way by
-		assuming $\exists v \lnot F$ to be \textbf{true}. It follows directly that because there is at least one term
-		in a model that makes $\lnot F$ \textbf{true} not all terms make $F$ \textbf{true} which is the statement 			on the left-hand side.
+		assuming $\exists v \lnot F$ to be satisfied by $\mathcal{M}$. It follows directly that because there 
+		is at least one $a \in \mathcal{M}$ that makes $\lnot F$ \textbf{true} \textit{not all} 
+		$a \in \mathcal{M}$  make $F$ \textbf{true} which is the statement on the left-hand side.
 		
 		\bigskip
 		
@@ -61,18 +62,46 @@ a quantified variable, and $F$ and $G$ for first-order logical formulas with no 
 		\begin{equation} \lnot \exists v F \cong \forall v \lnot F \end{equation}
 		
 		The implication $\lnot \exists v F \implies \forall v \lnot F$ is proven by first assuming $\lnot \exists v F$ 
-		is \textbf{true}. With this assumption we can say that there \emph{does not} exist a term $v$ such that F is 
-		\textbf{true}, this leads to the right-hand statement that for all terms $\lnot F$ is \textbf{true}.
+		is satisfied by $\mathcal{M}$. With this assumption we can say that there \emph{does not} exist 
+		$a \in \mathcal{M}$ such that F is \textbf{true}, this leads to the right-hand statement that for all
+		$a \in \mathcal{M}$  $\lnot F$ is \textbf{true}.
 		
 		The converse implication $\lnot \exists v F \impliedby \forall v \lnot F$ is proven by assuming 
-		$\forall v \lnot F$ is \textbf{true}. Now we can see that for all terms $\lnot F$ is \textbf{true}, therefore
-		there \emph{does not} exist a term that makes $F$ \textbf{true}, which is the left-hand statement.
+		$\forall v \lnot F$ is satisfied by $\mathcal{M}$. Now we can see that for all $a \in \mathcal{M}$ 
+		$\lnot F$ is \textbf{true}, therefore there \emph{does not} exist $a \in \mathcal{M}$ that makes $F$ 
+		\textbf{true}, which is the left-hand statement.
 	\end{proof}
 	
 \setcounter{equation}{0}
 
 \pagebreak
+
+\begin{thm}$Qv F \land G \cong Qv(F \land G)$\end{thm}
+
+	\begin{proof}
+		For the first case:
 	
+		\begin{equation} \forall v F \land G \cong \forall v(F \land G) \end{equation}
+	
+		The implication $\forall v F \land G \implies \forall v(F \land G)$ is proven as follows. 
+		Let $\mathcal{M}$ represent a model
+		that satisfies $\forall v F \land G$, this means $\mathcal{M}$ satisfies $\forall v F$ 
+		and $\mathcal{M}$ satisfies $G$. For $\forall v F$ since all $a \in \mathcal{M}$ make
+		$F$ \textbf{true} we can say more generally that $\mathcal{M}$ satisfies $F$. We can now
+		combine $F$ and $G$ and say $\mathcal{M}$ satisfies $(F \land G)$. Finally because 
+		$v$ does not appear free in $G$ and all $a \in \mathcal{M}$ make $F$ \textbf{true}
+		$\mathcal{M}$ satisfies $\forall v(F \land G)$. 
+		
+		The converse implication $\forall v F \land G \impliedby \forall v(F \land G)$ is proven using 
+		the same argument in reverse. If we assume a model $\mathcal{M}$ that satisfies 
+		$\forall v(F \land G)$ we can say that all $a \in \mathcal{M}$ make $F \land G$ \textbf{true}.
+		We can then say that $\mathcal{M}$ satisfies $F$ and $\mathcal{M}$ satisfies $G$. With
+		this argument we can see that since all $a \in \mathcal{M}$ make $F$ \textbf{true} and $v$
+		does not appear free in G (something's not right here...)
+	\end{proof}
+	
+\setcounter{equation}{0}
+
 % QUESTION 2	
 	
 \section{proof of prenex normal form}
