@@ -61,12 +61,12 @@ a quantified variable, and $F$ and $G$ for first-order logical formulas with no 
 		\begin{equation} \lnot \exists v F \cong \forall v \lnot F \end{equation}
 		
 		The implication $\lnot \exists v F \implies \forall v \lnot F$ is proven by first assuming $\lnot \exists v F$ 
-		is \textbf{true}. With this assumption we can say that there does not exist a term $v$ such that F is 
+		is \textbf{true}. With this assumption we can say that there \emph{does not} exist a term $v$ such that F is 
 		\textbf{true}, this leads to the right-hand statement that for all terms $\lnot F$ is \textbf{true}.
 		
 		The converse implication $\lnot \exists v F \impliedby \forall v \lnot F$ is proven by assuming 
 		$\forall v \lnot F$ is \textbf{true}. Now we can see that for all terms $\lnot F$ is \textbf{true}, therefore
-		there \textit{does not} exist a term that makes $F$ \textbf{true}, which is the left-hand statement.
+		there \emph{does not} exist a term that makes $F$ \textbf{true}, which is the left-hand statement.
 	\end{proof}
 	
 \setcounter{equation}{0}
@@ -77,11 +77,12 @@ a quantified variable, and $F$ and $G$ for first-order logical formulas with no 
 	
 \section{proof of prenex normal form}
 
-\begin{thm} Where \textbf{prenex normal form} is a formula where all the quantifiers are written as a string at the front and range over the quantifier-free portion, every formula in first-order logic has an equivalent prenex normal form. \end{thm}
+\begin{thm} Where \textbf{prenex normal form} is a logical formula where all the quantifiers are written as a string at the front and range over the quantifier-free matrix, every formula in first-order logic has an equivalent prenex normal form. \end{thm}
 
 	
 	\begin{proof}
-		We will proceed by induction. Let us first agree on the following equivalences:
+		We will proceed by induction on the complexity of the formula. 
+		Let us first agree on the following equivalences:
 		
 		\begin{equation} \lnot Qv F \cong Q'v \lnot F \end{equation}
 		\begin{equation} Qv F \land G \cong Qv(F \land G) \end{equation}
@@ -95,11 +96,42 @@ a quantified variable, and $F$ and $G$ for first-order logical formulas with no 
 		
 		and the \textbf{principle of substitution of equivalents}:
 		
-		\begin{equation} Qv F \cong Qw F_{v} w \end{equation}
+		\begin{equation} Qv F \cong Qw F_{v} w. \end{equation}
 		
 		\bigskip
 		
-		wow
+		Our \textit{base case} is the logical formula with no quantified variables. This formula
+		is automatically prenex normal form. The \textit{inductive step} assumes that every formula $F$
+		with $n$ or fewer logical symbols is equivalent to a formula $F'$ in prenex normal form. 
+		Now we consider a formula with $n + 1$ logical symbols. This well-formed formula is
+		one of the following:
+		
+		\begin{equation*} \lnot \phi \end{equation*}
+		\begin{equation*} \phi \land \psi \end{equation*}
+		\begin{equation*} \phi \lor \psi \end{equation*}
+		\begin {equation*} \phi \rightarrow \psi \end{equation*}
+		
+		\smallskip
+		
+		By repeated applications of (1) - (7) and the usage of (8) to change bound variables 
+		it is possible to convert any of these formulas into prenex normal form as we'll show below.
+		
+		\textit{Case 1.} For $\lnot \phi$ if $\phi$ has no quantifiers it is in prenex normal form. 
+		If $\phi$ has one or more quantifiers by the induction hypothesis it is in prenex normal form 
+		($Q_{1}v \dots Q_{n}v F$). The negation can be moved to the matrix by $n$ applications 
+		of (1) using (8) to change bound variables when needed.
+		
+		\textit{Case 2.} For $\phi \land \psi$ if $\phi$ and $\psi$ both have no quantifiers $\phi \land \psi$
+		is in prenex normal form. If either (or both) have quantifiers mixed applications of (2) and (3), 
+		depending on which side the quantifier is on, and use of (8) to change bound variables when needed 
+		will yield a formula in prenex normal form.
+		
+		\textit{Case 3.} For $\phi \lor \psi$ the proof is the same as \textit{Case 2} except using (4) and (5)
+		as the main operations.
+		
+		\textit{Case 4.} For $\phi \rightarrow \psi$ the proof is the same as \textit{Case 2} and \textit{Case 3}
+		except using (6) and (7) as the main operations.
+		
 		
 	\end{proof}
 	
