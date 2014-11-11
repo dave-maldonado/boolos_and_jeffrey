@@ -96,7 +96,7 @@ first order logic and $H$ is a single statement logically entailed from $\Delta$
 the domain $\mathbb{Z}$ of negative integers, 0 and positive integers. Special features of the language
 referred to in the following logical statements include the successor function $(')$, the constant \textbf{0}
 (which denotes the integer 0), the two-place ordering predicate $<$, the two-place state predicate \textbf{Q}, 
-and the two-place position predicate \textbf{S}.
+and the two-place "scanning" predicate \textbf{S}.
 \\\\
 We first have to encode some mathematical facts about $'$ and $<$ :
 
@@ -120,7 +120,69 @@ Next we need to encode the initial configuration of the tape:
 \land y \neq \textbf{0}''''') \rightarrow \textbf{0}S_{0}y]
 \end{multline}
 \\\\
-Lastly we encode each of the state transitions (arrows in the flow graph) as logical statements:
+To finish $\Delta$ we encode each of the state transitions (arrows in the flow graph) as logical statements:
 
+\begin{equation}
+\forall t \forall x [(tQ_{1}x \land tS_{1}x) \rightarrow (t'Q_{1}x' \land \forall y [(tS_{0}y \rightarrow t'S_{0}y) 
+\land (tS_{1}y \rightarrow t'S_{1}y)])]
+\end{equation}
 
+\begin{equation}
+\forall t \forall x [(tQ_{1}x \land tS_{0}x) \rightarrow (t'Q_{2}x' \land \forall y [(tS_{0}y \rightarrow t'S_{0}y)
+\land (tS_{1}y \rightarrow t'S_{1}y)])]
+\end{equation}
+
+\begin{multline}
+\forall t \forall x [(tQ_{2}x \land tS_{1}x) \rightarrow \\ ([t'Q_{2}x \land t'S_{0}x] \land \forall y [(y \neq x) 
+\rightarrow ([tS_{0}y \rightarrow t'S_{0}y] \land [tS_{1}y \rightarrow t'S_{1}y])])]
+\end{multline}
+
+\begin{equation}
+\forall t \forall x [(tQ_{2}x \land tS_{0}x) \rightarrow (t'Q_{3}x' \land \forall y [(tS_{0}y \rightarrow t'S_{0}y)
+\land (tS_{1}y \rightarrow t'S_{1}y)])]
+\end{equation}
+
+\begin{equation}
+\forall t \forall x [(tQ_{3}x' \land tS_{0}x') \rightarrow (t'Q_{4}x \land \forall y [(tS_{0}y \rightarrow t'S_{0}y)
+\land (tS_{1}y \rightarrow t'S_{1}y)])]
+\end{equation}
+
+\begin{multline}
+\forall t \forall x [(tQ_{3}x \land tS_{1}x) \rightarrow \\ ([t'Q_{2}x \land t'S_{1}x] \land \forall y [(y \neq x)
+\rightarrow ([tS_{0}y \rightarrow t'S_{0}y] \land [tS_{1}y \rightarrow t'S_{1}y])])]
+\end{multline}
+
+\begin{equation}
+\forall t \forall x [(tQ_{4}x' \land tS_{0}x') \rightarrow (t'Q_{4}x \land \forall y [(tS_{0}y \rightarrow t'S_{0}y)
+\land (tS_{1}y \rightarrow t'S_{1}y)])]
+\end{equation}
+
+\begin{equation}
+\forall t \forall x [(tQ_{4}x' \land tS_{1}x') \rightarrow (t'Q_{5}x \land \forall y [(tS_{0}y \rightarrow t'S_{0}y)
+\land (tS_{1}y \rightarrow t'S_{1}y)])]
+\end{equation}
+
+\begin{equation}
+\forall t \forall x [(tQ_{5}x' \land tS_{1}x') \rightarrow (t'Q_{5}x \land \forall y [(tS_{0}y \rightarrow t'S_{0}y)
+\land (tS_{1}y \rightarrow t'S_{1}y)])]
+\end{equation}
+
+\begin{equation}
+\forall t \forall x [(tQ_{5}x \land tS_{0}x) \rightarrow (t'Q_{6}x' \land \forall y [(tS_{0}y \rightarrow t'S_{0}y) 
+\land (tS_{1}y \rightarrow t'S_{1}y)])]
+\end{equation}
+\\\\
+The last statement to encode is $H$, which is the disjunction of all sentences stating the machine is in a 
+potential halting state:
+
+\begin{multline}
+\\ \exists t \exists x (tQ_{1}x \land tS_{0}x) \lor \exists t \exists x (tQ_{1}x \land tS_{1}x) \lor \\
+\exists t \exists x (tQ_{2}x \land tS_{0}x) \lor \exists t \exists x (tQ_{2}x \land tS_{1}x) \lor \\
+\exists t \exists x (tQ_{3}x \land tS_{0}x) \lor \exists t \exists x (tQ_{3}x \land tS_{1}x) \lor \\
+\exists t \exists x (tQ_{4}x \land tS_{0}x) \lor \exists t \exists x (tQ_{4}x \land tS_{1}x) \lor \\
+\exists t \exists x (tQ_{5}x \land tS_{0}x) \lor \exists t \exists x (tQ_{5}x \land tS_{1}x) \lor \\
+\exists t \exists x (tQ_{6}x \land tS_{0}x) \lor \exists t \exists x (tQ_{6}x \land tS_{1}x) \lor \\
+\end{multline}
+
+(is halting symbol separate from blank and mark?)
 \end{document}
