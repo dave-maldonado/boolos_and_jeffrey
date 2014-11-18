@@ -50,11 +50,22 @@ argument: $ \{ \exists x(Fx \land Gx), \forall x(Gx \rightarrow \lnot Hx) \} \vd
 
 \bigskip
 
-\noindent $\Delta: \{ \}$
+\noindent $\Delta: \{ \exists x(Fx \land Gx), \forall x(Gx \rightarrow \lnot Hx), \forall x[x \neq x \lor \lnot(Fx \land \lnot Hx)] \}$
 
 \bigskip
 
 \noindent refutation of $\Delta:$
+
+\begin{align*} 
+  \exists x(Fx \land Gx)        								\tag*{$\Delta$} \\
+  \forall x(Gx \rightarrow \lnot Hx)							\tag*{$\Delta$} \\
+  \forall x[x \neq x \lor \lnot(Fx \land \lnot Hx)]    		                		\tag*{$\Delta$} \\
+  Fa \land Ga       										\tag*{1} \\
+  Ga \rightarrow \lnot Ha                                                                       \tag*{2} \\
+  a \neq a \lor \lnot(Fa \land \lnot Ha)							\tag*{3} \\
+  \lnot Fa \lor Ha										\tag*{6}
+  \qedhere
+\end{align*}
 
 % PROBLEM 2.2 %
 
