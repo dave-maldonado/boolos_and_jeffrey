@@ -32,13 +32,21 @@
 
 \section{The story so far...}
 
+We've previously established via the \textit{Church-Turing thesis} that there cannot 
+be a decision procedure for validity. This means there cannot be \textbf{both} a positive test
+and a negative test for validity. At this point in the book it is revealed that there is in fact a 
+positive test for validity. A proof of this fact will have to show the implication in both directions.
+The first implication that \textit{If the test says "yes", the formula is valid.} is known as \textit{Soundness}.
+The second implication that \textit{If the formula is valid, the test says "yes".} is known as \textit{Completeness}.
+Chapter 11 presents a proof of Soundness for the positive validity test.
+
 \section{a few refutations}
 
 % PROBLEM 2.1 %
 
 \subsection{}
 
-derivation: $ \{ \exists x(Fx \land Gx), \forall x(Gx \rightarrow \lnot Hx) \} \vdash \exists x[x=x \land (Fx \land \lnot Hx)] $
+argument: $ \{ \exists x(Fx \land Gx), \forall x(Gx \rightarrow \lnot Hx) \} \vdash \exists x[x=x \land (Fx \land \lnot Hx)] $
 
 \bigskip
 
@@ -52,7 +60,7 @@ derivation: $ \{ \exists x(Fx \land Gx), \forall x(Gx \rightarrow \lnot Hx) \} \
 
 \subsection{}
 
-derivation: $\{ \exists x Lbx \rightarrow \forall x Lxb, \lnot Lbb \} \vdash \lnot Lba $
+argument: $\{ \exists x Lbx \rightarrow \forall x Lxb, \lnot Lbb \} \vdash \lnot Lba $
 
 \bigskip
 
@@ -66,7 +74,7 @@ derivation: $\{ \exists x Lbx \rightarrow \forall x Lxb, \lnot Lbb \} \vdash \ln
 
 \subsection{}
 
-derivation: $\{ \exists y(Gy \land \forall z Kyz), \forall y(Fy \rightarrow \lnot \forall z Kyz) \} \vdash \exists y(Gy \land \lnot Fy) $
+argument: $\{ \exists y(Gy \land \forall z Kyz), \forall y(Fy \rightarrow \lnot \forall z Kyz) \} \vdash \exists y(Gy \land \lnot Fy) $
 
 \bigskip
 
