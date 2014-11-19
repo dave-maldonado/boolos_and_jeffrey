@@ -63,7 +63,7 @@ argument: $ \{ \exists x(Fx \land Gx), \forall x(Gx \rightarrow \lnot Hx) \} \vd
   Fa \land Ga       										\tag*{1} \\
   Ga \rightarrow \lnot Ha                                                                       \tag*{2} \\
   a \neq a \lor \lnot(Fa \land \lnot Ha)							\tag*{3} \\
-  \lnot Fa \lor Ha										\tag*{6}
+  \nvDash												\tag*{4,5,6} \\
   \qedhere
 \end{align*}
 
@@ -75,11 +75,21 @@ argument: $\{ \exists x Lbx \rightarrow \forall x Lxb, \lnot Lbb \} \vdash \lnot
 
 \bigskip
 
-\noindent $\Delta: \{ \}$
+\noindent $\Delta: \{ \forall x \forall y(Lbx \rightarrow Lyb),  \lnot Lbb, Lba \}$
 
 \bigskip
 
 \noindent refutation of $\Delta:$
+
+\begin{align*} 
+  \forall x \forall y(Lbx \rightarrow Lyb)        						\tag*{$\Delta$} \\
+  \lnot Lbb												\tag*{$\Delta$} \\
+  Lba								  		                		\tag*{$\Delta$} \\
+  \forall y(Lba \rightarrow Lyb)								\tag*{1} \\
+  Lba \rightarrow Lbb										\tag*{4} \\
+  \nvDash												\tag*{2,3,5} \\
+  \qedhere
+\end{align*}
 
 % PROBLEM 2.3 %
 
