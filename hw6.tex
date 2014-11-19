@@ -109,7 +109,12 @@ argument: $\{ \exists y(Gy \land \forall z Kyz), \forall y(Fy \rightarrow \lnot 
   \exists y \forall z(Gy \land Kyz)         						\tag*{$\Delta$} \\
   \forall y \exists z(Fy \rightarrow \lnot Kyz)						\tag*{$\Delta$} \\
   \forall y \lnot(Gy \land \lnot Fy)								\tag*{$\Delta$} \\
-  \nvDash												\tag*{?} \\
+  \forall z(Ga \land Kaz)									\tag*{1} \\
+  \exists z(Fa \rightarrow \lnot Kaz)							\tag*{2} \\
+  Fa \rightarrow \lnot Kab									\tag*{5} \\
+  Ga \land Kab											\tag*{4} \\
+  \lnot(Ga \land \lnot Fa)									\tag*{3} \\
+  \nvDash												\tag*{6,7,8} \\
   \qedhere
 \end{align*}
 
