@@ -99,10 +99,19 @@ argument: $\{ \exists y(Gy \land \forall z Kyz), \forall y(Fy \rightarrow \lnot 
 
 \bigskip
 
-\noindent $\Delta: \{ \} $
+\noindent $\Delta: \{ \exists y \forall z(Gy \land Kyz), \forall y \exists z(Fy \rightarrow \lnot Kyz), \forall y \lnot(Gy \land \lnot Fy) \} $
 
 \bigskip
 
 \noindent refutation of $\Delta:$
+
+\begin{align*} 
+  \exists y \forall z(Gy \land Kyz)         						\tag*{$\Delta$} \\
+  \forall y \exists z(Fy \rightarrow \lnot Kyz)						\tag*{$\Delta$} \\
+  \forall y \lnot(Gy \land \lnot Fy)								\tag*{$\Delta$} \\
+  \nvDash												\tag*{?} \\
+  \qedhere
+\end{align*}
+
 
 \end{document}
